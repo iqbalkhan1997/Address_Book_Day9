@@ -6,7 +6,7 @@ public class Contact {
      private String address;
      private String city;
      private int zip;
-     private int phoneNumber;
+     private long phoneNumber;
      private String email;
 
      public String getFirstName() {
@@ -49,11 +49,11 @@ public class Contact {
          this.zip = zip;
      }
 
-     public int getPhoneNumber() {
+     public long getPhoneNumber() {
          return phoneNumber;
      }
 
-     public void setPhoneNumber(int phoneNumber) {
+     public void setPhoneNumber(long phoneNumber) {
          this.phoneNumber = phoneNumber;
      }
 
