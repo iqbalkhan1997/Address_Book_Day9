@@ -1,10 +1,11 @@
 package com.blz.addressBook;
     import java.util.*;
 public class AddressBook {
-    public static List<Contact> contacts = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
+    public static List<Contact> contacts = new ArrayList<>();
 
-    public void addContacts(){
+    public  void addContacts(){
+
         System.out.println("Enter the contact details");
         Contact contact = new Contact();
 
@@ -30,6 +31,32 @@ public class AddressBook {
         contact.setEmail(scanner.next());
 
         contacts.add(contact);
+    }
+
+    public  void editContact(String edit){
+        System.out.println(AddressBook.contacts);
+        for(int i=0;i<contacts.size();i++){
+
+            Contact contact=(Contact)contacts.get(i);
+            System.out.println(contact);
+           // contact.setFirstName(edit);
+            if(contact.getFirstName().equals(edit)){
+                System.out.println("What data you want to edit?");
+                System.out.println("1.edit first name");
+                System.out.println("2.edit phone num");
+                switch (scanner.nextInt()) {
+                    case 1:
+                        contact.setFirstName(scanner.next());
+                        break;
+                    case 2:
+                        contact.setPhoneNumber(scanner.nextLong());
+                        break;
+
+                }
+//                contacts.add(contact);
+            }
+            System.out.println(AddressBook.contacts);
+        }
     }
 
 }
