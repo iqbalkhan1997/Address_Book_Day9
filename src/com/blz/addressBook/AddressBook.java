@@ -33,10 +33,10 @@ public class AddressBook {
         contacts.add(contact);
     }
 
-    public  void editContact(String edit){
+    public  void editContact(String firstName){
         for(int i=0;i<contacts.size();i++){
             Contact contact=(Contact)contacts.get(i);
-            if(contact.getFirstName().equals(edit)){
+            if(contact.getFirstName().equals(firstName)){
                 System.out.println("What data you want to edit?");
                 System.out.println("1.First name/2.Last name/3.Address/4.City/5.Zip/6.PhoneNumber/7.Email");
                 System.out.println("Press the number you want to edit");
@@ -73,6 +73,15 @@ public class AddressBook {
             }
         }
         System.out.println(AddressBook.contacts);
+    }
+    public void deleteContact(String firstName){
+        for(Contact contact : contacts){
+            if(contact.getFirstName().equals(firstName)){
+                contacts.remove(contact);
+            }
+            System.out.println(AddressBook.contacts);
+            break;
+        }
     }
 
 }
